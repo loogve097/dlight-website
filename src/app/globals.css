@@ -1,26 +1,139 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================
+   D'Light デザインシステム
+   ============================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* カラーパレット（名刺の世界観に準拠） */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #0f0f0f;
+  --color-bg-card: #161616;
+  --color-bg-card-hover: #1e1e1e;
+  --color-text-primary: #f5f5f5;
+  --color-text-muted: #a0a0a0;
+  --color-text-dark: #666666;
+  --color-accent-gold: #c9a84c;
+  --color-accent-amber: #dbb85c;
+  --color-accent-gold-light: #e0c96e;
+  --color-accent-green: #1a3a2a;
+  --color-border: #1e1e1e;
+  --color-border-light: #2a2a2a;
+
+  /* フォント */
+  --font-sans: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ベーススタイル */
+body {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* セレクション */
+::selection {
+  background-color: rgba(212, 168, 67, 0.3);
+  color: #f5f5f5;
+}
+
+/* グロー効果のキーフレーム */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ユーティリティクラス */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.25), 0 0 40px rgba(201, 168, 76, 0.08);
+}
+
+.glow-gold-strong {
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.4), 0 0 60px rgba(201, 168, 76, 0.15);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #c9a84c, #dbb85c, #e0c96e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 名刺風の光エフェクト（右上から差し込む光） */
+.light-ray {
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(201, 168, 76, 0.03) 50%,
+    rgba(255, 255, 255, 0.04) 60%,
+    rgba(201, 168, 76, 0.02) 70%,
+    transparent 80%
+  );
+}
+
+/* セパレーターライン（名刺の細線スタイル） */
+.separator-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+}
+
+.bg-gradient-dark-reverse {
+  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+}
+
+.border-gradient-gold {
+  border-image: linear-gradient(135deg, #d4a843, transparent) 1;
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
 }
