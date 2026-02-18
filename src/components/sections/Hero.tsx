@@ -8,7 +8,7 @@ import GlowEffect from "@/components/animation/GlowEffect";
 const HERO_STATS = [
   { value: "5,000万+", label: "累計SNS再生数" },
   { value: "50万+", label: "フォロワー獲得" },
-  { value: "100件+", label: "反響獲得（2ヶ月）" },
+  { value: "100件+", label: "月間反響獲得" },
 ];
 
 /** ヒーローセクション */

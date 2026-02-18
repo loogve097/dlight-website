@@ -18,7 +18,7 @@ import CTA from "@/components/sections/CTA";
  * 4. Services — 具体的なサービス内容
  * 5. Results  — 数字で裏付ける実績
  * 6. Target   — 「こんな方に最適」で対象を明確に
- * 7. Voices   — クライアントの声で社会的証明
+ * 7. Trust    — 信頼の裏付け（数字と継続で証明）
  * 8. Flow     — 依頼〜成果までのプロセスを可視化
  * 9. CTA      — お問い合わせへ誘導
  */

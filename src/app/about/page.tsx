@@ -63,7 +63,7 @@ export default function AboutPage() {
                       Uda Akihito
                     </p>
 
-                    <div className="grid grid-cols-2 gap-4 mb-6 max-w-sm mx-auto lg:mx-0">
+                    <div className="grid grid-cols-3 gap-4 mb-6 max-w-md mx-auto lg:mx-0">
                       <div>
                         <span className="text-text-dark text-xs">拠点</span>
                         <p className="text-text-primary text-sm font-medium">
@@ -74,6 +74,12 @@ export default function AboutPage() {
                         <span className="text-text-dark text-xs">出身</span>
                         <p className="text-text-primary text-sm font-medium">
                           山形県
+                        </p>
+                      </div>
+                      <div>
+                        <span className="text-text-dark text-xs">マーケティング歴</span>
+                        <p className="text-text-primary text-sm font-medium">
+                          4年半
                         </p>
                       </div>
                     </div>
@@ -110,11 +116,11 @@ export default function AboutPage() {
                 </p>
                 <p>
                   「まだ誰も手をつけていない空白地帯」から成果を出す泥臭いリサーチと実行力。
-                  それが私の強みであり、D&apos;Lightが提供する価値です。
+                  それが私たちの強みであり、D&apos;Lightが提供する価値です。
                 </p>
                 <p className="text-accent-gold font-medium">
                   売上と信頼に直結する「伴走型マーケティング・パートナー」として、
-                  あなたの事業の成長をお手伝いさせてください。
+                  あなたの事業の成長をご支援いたします。
                 </p>
               </div>
             </FadeInOnScroll>

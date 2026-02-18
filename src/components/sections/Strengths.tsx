@@ -12,7 +12,7 @@ export default function Strengths() {
           <SectionTitle
             label="Why D'Light"
             title="大手でもフリーランスでもない、D'Lightという選択"
-            subtitle="レポートを送るだけの運用代行とは違います。"
+            subtitle="言われたことをただやる運用代行とは違う、圧倒的提案型伴走支援。"
           />
         </FadeInOnScroll>
 

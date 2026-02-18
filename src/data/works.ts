@@ -86,7 +86,7 @@ export const RESULT_HIGHLIGHTS: ResultHighlight[] = [
 /** 選ばれる理由 */
 export const STRENGTHS: StrengthItem[] = [
   {
-    title: "少数精鋭だから、話が速い",
+    title: "少数精鋭だから、話が早く柔軟対応",
     description:
       "大手のような階層構造がなく、意思決定者に直接相談できる体制。方針決定からアクションまでのタイムラグを最小限にします。",
     icon: "⚡",

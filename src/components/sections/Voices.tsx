@@ -2,29 +2,29 @@ import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 
-/** クライアントの声データ（匿名化済み） */
-const VOICES = [
+/** 信頼の裏付けデータ */
+const TRUST_POINTS = [
   {
-    quote:
-      "以前の業者はオンラインで月1回のMTGだけだったけど、宇田さんはうちの事務所にも来てくれて、こちらの思いを汲み取ろうとしてくれる。距離の近さが全然違いました。",
-    industry: "不動産業",
-    role: "代表取締役",
+    icon: "🤝",
+    title: "継続率の高さが信頼の証",
+    description:
+      "一度ご契約いただいたクライアント様の多くが、長期的なお付き合いを選んでくださっています。成果を実感いただけているからこそ、続けていただける関係です。",
   },
   {
-    quote:
-      "こちらの業界のことを本当によくリサーチしてくれていて驚きました。「そこまで調べてるんですか？」と。提案の解像度が他社と全然違う。",
-    industry: "サービス業",
-    role: "経営者",
+    icon: "📊",
+    title: "データで語る。感覚に頼らない。",
+    description:
+      "施策の効果は必ず数字で検証。再生数・フォロワー数・反響数・CPA・CVRなど、定量的な指標をもとにPDCAを回し続けます。",
   },
   {
-    quote:
-      "レスポンスの速さが段違い。質問を投げたら当日中に返ってくるので、こちらも意思決定が早くなった。結果的にプロジェクト全体のスピードが上がりました。",
-    industry: "人材業",
-    role: "マーケティング責任者",
+    icon: "🔍",
+    title: "業界を問わないリサーチ力",
+    description:
+      "不動産・車・介護・人材・ECなど、幅広い業界での支援実績。業界特有の課題を理解したうえで、最適な戦略をご提案します。",
   },
 ];
 
-/** クライアントの声セクション */
+/** 信頼の裏付けセクション（クライアントの声の代替） */
 export default function Voices() {
   return (
     <section className="py-20 lg:py-28 bg-gradient-dark relative overflow-hidden">
@@ -42,43 +42,28 @@ export default function Voices() {
       <Container className="relative z-10">
         <FadeInOnScroll>
           <SectionTitle
-            label="Voices"
-            title="クライアントの声"
-            subtitle="D'Lightに依頼いただいたお客様からの声をご紹介します。"
+            label="Trust"
+            title="信頼の裏付け"
+            subtitle="派手な言葉ではなく、数字と継続で信頼を積み重ねています。"
           />
         </FadeInOnScroll>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {VOICES.map((voice, index) => (
+          {TRUST_POINTS.map((point, index) => (
             <FadeInOnScroll key={index} delay={index * 0.15}>
               <div className="bg-bg-card border border-border rounded-2xl p-6 lg:p-8 h-full flex flex-col">
-                {/* 引用符 */}
-                <span className="text-accent-gold text-4xl font-serif leading-none mb-4">
-                  &ldquo;
-                </span>
+                {/* アイコン */}
+                <span className="text-3xl mb-4 block">{point.icon}</span>
 
-                {/* 声の内容 */}
+                {/* タイトル */}
+                <h3 className="text-lg font-bold text-text-primary mb-3">
+                  {point.title}
+                </h3>
+
+                {/* 説明 */}
                 <p className="text-text-muted text-sm leading-relaxed flex-1">
-                  {voice.quote}
+                  {point.description}
                 </p>
-
-                {/* セパレーター */}
-                <div className="separator-line my-5" />
-
-                {/* 属性情報 */}
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-accent-gold/10 border border-accent-gold/20 flex items-center justify-center">
-                    <span className="text-accent-gold text-xs font-bold">
-                      {voice.industry.charAt(0)}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-text-primary text-sm font-medium">
-                      {voice.industry}
-                    </p>
-                    <p className="text-text-dark text-xs">{voice.role}</p>
-                  </div>
-                </div>
               </div>
             </FadeInOnScroll>
           ))}

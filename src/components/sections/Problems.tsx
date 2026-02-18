@@ -40,7 +40,7 @@ export default function Problems() {
           <SectionTitle
             label="Problems"
             title="こんな課題を感じていませんか？"
-            subtitle="集客と採用、どちらの課題にもD'Lightは戦略設計から実行まで一気通貫で応えます。"
+            subtitle="集客と採用、どちらの課題にもD'Lightは戦略設計から実行まで一気通貫でご対応いたします。"
           />
         </FadeInOnScroll>
 
