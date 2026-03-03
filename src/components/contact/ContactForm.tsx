@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { submitContactForm } from "@/app/contact/actions";
 import Button from "@/components/ui/Button";
 
 /** 相談内容の選択肢 */
@@ -14,6 +13,9 @@ const SUBJECTS = [
   "その他",
 ];
 
+/** Web3Forms アクセスキー（クライアントサイド用） */
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+
 /** お問い合わせフォームコンポーネント */
 export default function ContactForm() {
   const [status, setStatus] = useState<
@@ -22,11 +24,61 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
 
   /** フォーム送信ハンドラー */
-  async function handleSubmit(formData: FormData) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setStatus("submitting");
-    const result = await submitContactForm(formData);
-    setStatus(result.success ? "success" : "error");
-    setMessage(result.message);
+
+    const formData = new FormData(e.currentTarget);
+
+    /* バリデーション */
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const msg = formData.get("message") as string;
+
+    if (!name || !email || !msg) {
+      setStatus("error");
+      setMessage("必須項目を入力してください。");
+      return;
+    }
+
+    /* メールアドレスの形式チェック */
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus("error");
+      setMessage("正しいメールアドレスを入力してください。");
+      return;
+    }
+
+    try {
+      /* Web3Formsにデータを送信（クライアントサイド） */
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name,
+          email,
+          company: formData.get("company") || "",
+          phone: formData.get("phone") || "",
+          subject: formData.get("subject") || "お問い合わせ",
+          message: msg,
+          from_name: "D'Light お問い合わせフォーム",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setMessage("お問い合わせを受け付けました。3営業日以内にご連絡いたします。");
+      } else {
+        setStatus("error");
+        setMessage("送信に失敗しました。しばらく時間をおいてからお試しください。");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("通信エラーが発生しました。しばらく時間をおいてからお試しください。");
+    }
   }
 
   /* 送信完了時 */
@@ -56,7 +108,7 @@ export default function ContactForm() {
     "w-full bg-bg-primary border border-border rounded-lg px-4 py-3 text-text-primary text-sm placeholder:text-text-dark focus:outline-none focus:border-accent-gold/50 focus:ring-1 focus:ring-accent-gold/30 transition-colors";
 
   return (
-    <form action={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6">
       {/* エラーメッセージ */}
       {status === "error" && (
         <div className="p-4 bg-red-900/20 border border-red-900/50 rounded-lg text-red-400 text-sm">

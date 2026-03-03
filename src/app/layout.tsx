@@ -19,9 +19,9 @@ const notoSansJP = Noto_Sans_JP({
   preload: false,
 });
 
-/** サイトのベースURL（デプロイ後に実際のドメインに変更） */
+/** サイトのベースURL */
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://dlight-marketing.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.dlight-inc.jp";
 
 /* メタデータ */
 export const metadata: Metadata = {

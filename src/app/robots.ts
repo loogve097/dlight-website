@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 /** サイトのベースURL */
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dlight-marketing.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dlight-inc.jp";
 
 /** robots.txt を自動生成 */
 export default function robots(): MetadataRoute.Robots {

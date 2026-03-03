@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/blog";
 
-/** サイトのベースURL（デプロイ後に実際のドメインに変更） */
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dlight-marketing.com";
+/** サイトのベースURL */
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dlight-inc.jp";
 
 /** サイトマップを自動生成 */
 export default function sitemap(): MetadataRoute.Sitemap {

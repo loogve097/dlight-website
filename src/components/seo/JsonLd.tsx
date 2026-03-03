@@ -1,6 +1,6 @@
 /** サイトのベースURL */
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://dlight-marketing.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.dlight-inc.jp";
 
 /** 組織の構造化データ（Organization） */
 function OrganizationJsonLd() {
