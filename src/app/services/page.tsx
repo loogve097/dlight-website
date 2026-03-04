@@ -86,10 +86,10 @@ export default function ServicesPage() {
             <FadeInOnScroll delay={0.1}>
               <Card>
                 <h3 className="text-lg font-bold text-text-primary mb-2">
-                  架電部隊の配備
+                  アウトバウンドマーケティング
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  マーケティング施策と連動したアウトバウンド架電チームを編成。リード獲得からアポイント設定までを一括で対応します。
+                  マーケティング施策と連動したアウトバウンド施策を設計・実行。リード獲得からアポイント設定までを一括で対応します。
                 </p>
               </Card>
             </FadeInOnScroll>
