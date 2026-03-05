@@ -75,6 +75,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  /* Google Search Console 所有権確認用 */
+  verification: {
+    google: "Kh1sUxVDuK2g36KgmpJT5sYJ4iPHgZ2tremP5P29YSs",
+  },
 };
 
 export default function RootLayout({
