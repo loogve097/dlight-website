@@ -149,6 +149,85 @@ function WebSiteJsonLd() {
   );
 }
 
+/** ブログ記事の構造化データ（Article） */
+type ArticleJsonLdProps = {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  category: string;
+  tags: string[];
+};
+
+export function ArticleJsonLd({
+  title,
+  description,
+  date,
+  slug,
+  category,
+  tags,
+}: ArticleJsonLdProps) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: new Date(date).toISOString(),
+    dateModified: new Date(date).toISOString(),
+    author: {
+      "@type": "Person",
+      name: "宇田 照史",
+      jobTitle: "代表",
+      url: `${BASE_URL}/about`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "D'Light",
+      url: BASE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/blog/${slug}`,
+    },
+    articleSection: category,
+    keywords: tags.join(", "),
+    inLanguage: "ja",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/** パンくずリストの構造化データ（BreadcrumbList） */
+type BreadcrumbItem = {
+  name: string;
+  href: string;
+};
+
+export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${BASE_URL}${item.href}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 /** 全構造化データをまとめて出力するコンポーネント */
 export default function JsonLd() {
   return (

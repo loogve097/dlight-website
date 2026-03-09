@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -72,6 +73,23 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      {/* SEO構造化データ */}
+      <ArticleJsonLd
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        date={post.frontmatter.date}
+        slug={slug}
+        category={post.frontmatter.category}
+        tags={post.frontmatter.tags}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "ブログ", href: "/blog" },
+          { name: post.frontmatter.title, href: `/blog/${slug}` },
+        ]}
+      />
+
       {/* 記事ヘッダー */}
       <section className="pt-32 pb-8 lg:pt-40 lg:pb-12 bg-gradient-dark">
         <Container>
