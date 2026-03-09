@@ -5,7 +5,8 @@ import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { getPostBySlug, getAllSlugs } from "@/lib/blog";
+import BlogCard from "@/components/blog/BlogCard";
+import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
@@ -103,7 +104,13 @@ export default async function BlogPostPage({ params }: Props) {
                 <time>{formatDate(post.frontmatter.date)}</time>
                 <div className="flex gap-2">
                   {post.frontmatter.tags.map((tag) => (
-                    <span key={tag}>#{tag}</span>
+                    <a
+                      key={tag}
+                      href={`/blog/tag/${encodeURIComponent(tag)}`}
+                      className="hover:text-accent-gold transition-colors"
+                    >
+                      #{tag}
+                    </a>
                   ))}
                 </div>
               </div>
@@ -139,6 +146,26 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               </div>
             </FadeInOnScroll>
+
+            {/* 関連記事 */}
+            {(() => {
+              const related = getRelatedPosts(slug, 3);
+              if (related.length === 0) return null;
+              return (
+                <FadeInOnScroll delay={0.3}>
+                  <div className="mt-16">
+                    <h2 className="text-xl font-bold text-text-primary mb-6 text-center">
+                      関連記事
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {related.map((relatedPost) => (
+                        <BlogCard key={relatedPost.slug} post={relatedPost} />
+                      ))}
+                    </div>
+                  </div>
+                </FadeInOnScroll>
+              );
+            })()}
           </article>
         </Container>
       </section>

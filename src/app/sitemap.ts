@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, getAllTags } from "@/lib/blog";
 
 /** サイトのベースURL */
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dlight-inc.jp";
@@ -65,5 +65,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  /* タグページ */
+  const tags = getAllTags();
+  const tagPages: MetadataRoute.Sitemap = tags.map(({ tag }) => ({
+    url: `${BASE_URL}/blog/tag/${encodeURIComponent(tag)}`,
+    lastModified: latestPostDate,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
+
+  return [...staticPages, ...blogPages, ...tagPages];
 }

@@ -24,7 +24,9 @@ export default function BlogCard({ post }: Props) {
           <time>{formatDate(post.frontmatter.date)}</time>
           <div className="flex gap-2">
             {post.frontmatter.tags.slice(0, 2).map((tag) => (
-              <span key={tag}>#{tag}</span>
+              <span key={tag} className="hover:text-accent-gold transition-colors">
+                #{tag}
+              </span>
             ))}
           </div>
         </div>
