@@ -27,29 +27,29 @@ const BASE_URL =
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "D'Light | WEBマーケティング支援",
+    default: "D'Light | 歴史を照らし、道を創る。",
     template: "%s | D'Light",
   },
   description:
-    "集客と採用のためのWEBマーケティング支援。運用代行で終わらない、事業をグロースさせる「勝ち筋」の設計。SNS運用・WEB広告・映像制作を一気通貫で支援するD'Lightです。",
+    "中小企業の可能性を照らし、成長の道を創る。WEBマーケティング支援と健康経営コンサルティングの二本柱で、事業の成長を支えるD'Lightです。",
   keywords: [
     "WEBマーケティング",
+    "中小企業 マーケティング",
+    "集客支援",
+    "健康経営",
     "SNS運用代行",
     "WEB広告運用",
     "採用マーケティング",
     "映像制作",
     "WEB制作",
     "マーケティング支援",
-    "SNS採用",
-    "YouTube運用",
-    "TikTok運用",
-    "中小企業 マーケティング",
-    "集客支援",
+    "健康経営優良法人",
+    "健康経営コンサルティング",
   ],
   openGraph: {
-    title: "D'Light | 集客と採用のWEBマーケティング支援",
+    title: "D'Light | 歴史を照らし、道を創る。",
     description:
-      "運用代行で終わらない、事業をグロースさせる「勝ち筋」の設計。SNS運用・WEB広告・映像制作を一気通貫で支援。",
+      "中小企業の可能性を照らし、成長の道を創る。WEBマーケティング支援と健康経営コンサルティングで事業成長を支援。",
     type: "website",
     locale: "ja_JP",
     siteName: "D'Light",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "D'Light | WEBマーケティング支援",
+    title: "D'Light | 歴史を照らし、道を創る。",
     description:
-      "運用代行で終わらない、事業をグロースさせる「勝ち筋」の設計。",
+      "中小企業の可能性を照らし、成長の道を創る。WEBマーケティング支援と健康経営コンサルティングで事業成長を支援。",
   },
   alternates: {
     canonical: BASE_URL,

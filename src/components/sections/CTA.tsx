@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 
-/** CTAセクション */
+/** CTAセクション — まずは話を聞かせてください */
 export default function CTA() {
   return (
     <section className="py-20 lg:py-28 bg-gradient-dark relative overflow-hidden">
@@ -23,21 +23,19 @@ export default function CTA() {
             Contact
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-6 leading-tight">
-            まずはお気軽に
-            <br />
-            ご相談ください
+            まずは、話を聞かせてください。
           </h2>
-          <p className="text-text-muted text-base lg:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            現状の課題や目標をお聞かせください。
+          <p className="text-text-muted text-base lg:text-lg max-w-xl mx-auto mb-4 leading-relaxed">
+            御社の現状と課題をお聞かせください。
+          </p>
+          <p className="text-text-muted text-sm max-w-xl mx-auto mb-10 leading-relaxed">
+            成果が出なければ、3ヶ月で切ってください。
             <br />
-            最適な「勝ち筋」をご提案いたします。
+            それでも構わないと思える提案をします。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact" size="lg">
               無料相談はこちら
-            </Button>
-            <Button href="/works" variant="outline" size="lg">
-              実績を見る
             </Button>
           </div>
         </FadeInOnScroll>

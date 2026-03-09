@@ -3,17 +3,17 @@ import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 import BlogCard from "@/components/blog/BlogCard";
-import { getMarketingPosts } from "@/lib/blog";
+import { getHealthManagementPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "WEBマーケティング ブログ",
+  title: "健康経営コラム",
   description:
-    "D'Lightが発信するWEBマーケティングに関するコラム・ノウハウ記事です。",
+    "D'Lightが発信する健康経営に関するコラム・ノウハウ記事です。健康経営優良法人の認定取得や助成金活用など、実践的な情報をお届けします。",
 };
 
-/** WEBマーケティング ブログ一覧ページ（健康経営カテゴリ除外） */
-export default function BlogPage() {
-  const posts = getMarketingPosts();
+/** 健康経営ブログ一覧ページ */
+export default function HealthManagementBlogPage() {
+  const posts = getHealthManagementPosts();
 
   return (
     <>
@@ -22,9 +22,9 @@ export default function BlogPage() {
         <Container>
           <FadeInOnScroll>
             <SectionTitle
-              label="Blog"
-              title="ブログ / コラム"
-              subtitle="WEBマーケティングに関するノウハウや知見を発信しています。"
+              label="Health Management"
+              title="健康経営コラム"
+              subtitle="健康経営優良法人の認定取得や助成金活用など、実践的な情報を発信しています。"
             />
           </FadeInOnScroll>
         </Container>

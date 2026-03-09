@@ -108,3 +108,17 @@ export function getPostsByTag(tag: string): BlogPost[] {
     post.frontmatter.tags.includes(tag)
   );
 }
+
+/** 健康経営カテゴリ以外のブログ記事を取得 */
+export function getMarketingPosts(): BlogPost[] {
+  return getAllPosts().filter(
+    (post) => post.frontmatter.category !== "健康経営"
+  );
+}
+
+/** 健康経営カテゴリのブログ記事のみ取得 */
+export function getHealthManagementPosts(): BlogPost[] {
+  return getAllPosts().filter(
+    (post) => post.frontmatter.category === "健康経営"
+  );
+}

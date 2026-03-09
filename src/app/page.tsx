@@ -1,37 +1,37 @@
 import Hero from "@/components/sections/Hero";
-import Problems from "@/components/sections/Problems";
-import Strengths from "@/components/sections/Strengths";
+import Empathy from "@/components/sections/Empathy";
+import Belief from "@/components/sections/Belief";
+import Difference from "@/components/sections/Difference";
+import Proof from "@/components/sections/Proof";
 import Services from "@/components/sections/Services";
-import Results from "@/components/sections/Results";
-import Target from "@/components/sections/Target";
-import Voices from "@/components/sections/Voices";
+import ForWho from "@/components/sections/ForWho";
 import Flow from "@/components/sections/Flow";
 import CTA from "@/components/sections/CTA";
 
 /**
  * トップページ
  *
- * ストーリー構成:
- * 1. Hero     — キャッチコピーで引きつける
- * 2. Problems — 「こんな課題ありませんか？」で共感を得る
- * 3. Strengths — D'Lightの特徴を提示（なぜ課題を解決できるのか）
- * 4. Services — 具体的なサービス内容
- * 5. Results  — 数字で裏付ける実績
- * 6. Target   — 「こんな方に最適」で対象を明確に
- * 7. Trust    — 信頼の裏付け（数字と継続で証明）
- * 8. Flow     — 依頼〜成果までのプロセスを可視化
- * 9. CTA      — お問い合わせへ誘導
+ * 信念ドリブン構成:
+ * 1. Hero       — 信念宣言「歴史を照らし、道を創る。」
+ * 2. Empathy    — 「こんな経験、ありませんか？」で共感を得る
+ * 3. Belief     — 哲学と代表紹介、Valuesで信頼の芽を育てる
+ * 4. Difference — 一般的な代理店との決定的な違い
+ * 5. Proof      — クライアントに起きた変化（主語はクライアント）
+ * 6. Services   — 二本柱で事業の成長を支える
+ * 7. ForWho     — こんな方と、一緒に走りたい
+ * 8. Flow       — 始め方は、シンプルです
+ * 9. CTA        — まずは、話を聞かせてください
  */
 export default function Home() {
   return (
     <>
       <Hero />
-      <Problems />
-      <Strengths />
+      <Empathy />
+      <Belief />
+      <Difference />
+      <Proof />
       <Services />
-      <Results />
-      <Target />
-      <Voices />
+      <ForWho />
       <Flow />
       <CTA />
     </>
