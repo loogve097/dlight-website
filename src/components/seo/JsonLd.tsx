@@ -37,9 +37,8 @@ function OrganizationJsonLd() {
       },
     ],
     sameAs: [
-      "https://x.com/",
-      "https://note.com/",
-      "https://instagram.com/",
+      "https://x.com/teru_tlidh",
+      "https://www.instagram.com/d.light_97",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -244,8 +243,7 @@ export function PersonJsonLd() {
     },
     sameAs: [
       "https://x.com/teru_tlidh",
-      "https://note.com/",
-      "https://instagram.com/",
+      "https://www.instagram.com/d.light_97",
     ],
   };
 
