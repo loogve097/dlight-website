@@ -140,7 +140,7 @@ export default function Header() {
             )}
             <Link
               href="/contact"
-              className="px-5 py-2 text-sm font-medium bg-accent-gold text-bg-primary rounded-full hover:bg-accent-gold-light transition-colors duration-200"
+              className="px-5 py-2 text-sm font-medium bg-accent-gold text-text-on-gold rounded-full hover:bg-accent-gold-light transition-colors duration-200"
             >
               無料相談
             </Link>
@@ -229,7 +229,7 @@ export default function Header() {
           )}
           <Link
             href="/contact"
-            className="mt-4 px-8 py-3 text-base font-medium bg-accent-gold text-bg-primary rounded-full hover:bg-accent-gold-light transition-colors duration-200"
+            className="mt-4 px-8 py-3 text-base font-medium bg-accent-gold text-text-on-gold rounded-full hover:bg-accent-gold-light transition-colors duration-200"
           >
             無料相談
           </Link>

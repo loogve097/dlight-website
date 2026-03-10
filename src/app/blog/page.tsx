@@ -6,9 +6,12 @@ import BlogCard from "@/components/blog/BlogCard";
 import { getMarketingPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "WEBマーケティング ブログ",
+  title: "WEBマーケティング ブログ | 中小企業の集客・SNS運用ノウハウ",
   description:
-    "D'Lightが発信するWEBマーケティングに関するコラム・ノウハウ記事です。",
+    "中小企業の経営者・マーケティング担当者向けのWEBマーケティングコラム。代理店選びの失敗を防ぐ方法、SNS運用の自走化、伴走型支援の考え方など、現場で使える実践的なノウハウを発信しています。",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 /** WEBマーケティング ブログ一覧ページ（健康経営カテゴリ除外） */

@@ -7,9 +7,12 @@ import Button from "@/components/ui/Button";
 import { SERVICES, SERVICE_FLOW } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "サービス",
+  title: "サービス | 伴走型WEBマーケティング支援",
   description:
-    "D'Lightが提供するWEBマーケティング支援サービス。SNS運用代行、WEB広告運用、WEB制作、映像制作を一気通貫で対応します。",
+    "パッケージ売りはしません。D'Lightは御社の課題に合わせた戦略を設計し、SNS運用代行・WEB広告運用・映像制作・WEB制作を一気通貫で実行。自走できる仕組みづくりまで伴走します。",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 /** サービス詳細ページ */

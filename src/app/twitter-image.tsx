@@ -7,7 +7,7 @@ export const size = {
 };
 
 export const contentType = "image/png";
-export const alt = "D'Light | WEBマーケティング支援";
+export const alt = "D'Light | 中小企業の伴走型WEBマーケティング支援";
 
 /** Twitter Card 画像を動的に生成（OGPと同じデザイン） */
 export default async function TwitterImage() {
@@ -21,7 +21,7 @@ export default async function TwitterImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%)",
+          background: "linear-gradient(135deg, #0b1120 0%, #0f1729 50%, #0b1120 100%)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -86,7 +86,7 @@ export default async function TwitterImage() {
               letterSpacing: "2px",
             }}
           >
-            運用代行で終わらない。
+            歴史を照らし、
           </div>
           <div
             style={{
@@ -98,7 +98,7 @@ export default async function TwitterImage() {
               color: "transparent",
             }}
           >
-            「勝ち筋」の設計。
+            道を創る。
           </div>
         </div>
 
@@ -111,7 +111,7 @@ export default async function TwitterImage() {
             letterSpacing: "1px",
           }}
         >
-          集客も、採用も。戦略設計から実行まで一気通貫で支援。
+          中小企業の伴走型WEBマーケティング支援
         </div>
       </div>
     ),

@@ -5,9 +5,12 @@ import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "お問い合わせ",
+  title: "無料相談・お問い合わせ",
   description:
-    "D'Lightへのお問い合わせ。WEBマーケティングに関するご相談はお気軽にどうぞ。初回のご相談は無料です。",
+    "D'Lightへの無料相談・お問い合わせ。代理店に任せても成果が出ない、SNS運用を自社で回せるようにしたい——まずは現状の課題をお聞かせください。60〜180分のヒアリングで最適な道筋をご提案します。",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 /** お問い合わせページ */

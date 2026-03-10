@@ -7,7 +7,7 @@ export const size = {
 };
 
 export const contentType = "image/png";
-export const alt = "D'Light | WEBマーケティング支援";
+export const alt = "D'Light | 中小企業の伴走型WEBマーケティング支援";
 
 /** OGP画像を動的に生成 */
 export default async function OGImage() {
@@ -21,7 +21,7 @@ export default async function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%)",
+          background: "linear-gradient(135deg, #0b1120 0%, #0f1729 50%, #0b1120 100%)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -112,18 +112,7 @@ export default async function OGImage() {
               lineHeight: 1.3,
             }}
           >
-            運用代行で終わらない。
-          </div>
-          <div
-            style={{
-              fontSize: "48px",
-              fontWeight: 700,
-              color: "#f5f5f5",
-              letterSpacing: "2px",
-              lineHeight: 1.3,
-            }}
-          >
-            事業をグロースさせる、
+            歴史を照らし、
           </div>
           <div
             style={{
@@ -136,7 +125,7 @@ export default async function OGImage() {
               color: "transparent",
             }}
           >
-            「勝ち筋」の設計。
+            道を創る。
           </div>
         </div>
 
@@ -149,7 +138,7 @@ export default async function OGImage() {
             letterSpacing: "1px",
           }}
         >
-          SNS運用 / WEB広告 / 映像制作 / WEB制作
+          中小企業の伴走型WEBマーケティング支援
         </div>
       </div>
     ),

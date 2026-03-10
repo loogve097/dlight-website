@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Inter, Noto_Sans_JP, Yuji_Syuku } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
@@ -19,6 +19,14 @@ const notoSansJP = Noto_Sans_JP({
   preload: false,
 });
 
+const yujiSyuku = Yuji_Syuku({
+  variable: "--font-yuji-syuku",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+});
+
 /** サイトのベースURL */
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.dlight-inc.jp";
@@ -31,25 +39,30 @@ export const metadata: Metadata = {
     template: "%s | D'Light",
   },
   description:
-    "中小企業の可能性を照らし、成長の道を創る。WEBマーケティング支援と健康経営コンサルティングの二本柱で、事業の成長を支えるD'Lightです。",
+    "代理店に任せても成果が出ない——そんな中小企業の経営者へ。D'Lightは戦略設計から実行まで伴走し、自社で回せる集客の仕組みを一緒に創ります。SNS運用・WEB広告・映像制作を一気通貫で支援。神奈川・東京エリア対応。",
   keywords: [
     "WEBマーケティング",
     "中小企業 マーケティング",
-    "集客支援",
-    "健康経営",
+    "伴走型マーケティング",
+    "マーケティング 自走化",
     "SNS運用代行",
+    "SNS運用 自走化",
     "WEB広告運用",
+    "マーケティング 代理店 成果出ない",
+    "集客支援",
     "採用マーケティング",
     "映像制作",
     "WEB制作",
-    "マーケティング支援",
+    "マーケティング支援 神奈川",
+    "WEBマーケティング 東京 中小企業",
     "健康経営優良法人",
     "健康経営コンサルティング",
+    "健康経営 申請サポート",
   ],
   openGraph: {
     title: "D'Light | 歴史を照らし、道を創る。",
     description:
-      "中小企業の可能性を照らし、成長の道を創る。WEBマーケティング支援と健康経営コンサルティングで事業成長を支援。",
+      "代理店に任せても成果が出ない中小企業へ。戦略設計から実行まで伴走し、自社で回せるマーケティングの仕組みを創るD'Lightです。",
     type: "website",
     locale: "ja_JP",
     siteName: "D'Light",
@@ -59,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "D'Light | 歴史を照らし、道を創る。",
     description:
-      "中小企業の可能性を照らし、成長の道を創る。WEBマーケティング支援と健康経営コンサルティングで事業成長を支援。",
+      "代理店に任せても成果が出ない中小企業へ。戦略設計から実行まで伴走し、自社で回せるマーケティングの仕組みを創るD'Lightです。",
   },
   alternates: {
     canonical: BASE_URL,
@@ -89,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${notoSansJP.variable} antialiased bg-bg-primary text-text-primary`}
+        className={`${inter.variable} ${notoSansJP.variable} ${yujiSyuku.variable} antialiased bg-bg-primary text-text-primary`}
       >
         <JsonLd />
         <Header />

@@ -11,7 +11,7 @@ function OrganizationJsonLd() {
     url: BASE_URL,
     logo: `${BASE_URL}/images/logo.png`,
     description:
-      "集客と採用のためのWEBマーケティング支援。SNS運用・WEB広告・映像制作を一気通貫で支援。",
+      "中小企業向け伴走型WEBマーケティング支援。戦略設計から実行まで一貫して担当し、自走できる集客の仕組みを一緒に創ります。SNS運用・WEB広告・映像制作を一気通貫で支援。神奈川・東京エリア対応。",
     foundingDate: "2023",
     founder: {
       "@type": "Person",
@@ -23,16 +23,21 @@ function OrganizationJsonLd() {
       addressRegion: "神奈川県",
       addressCountry: "JP",
     },
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 35.6762,
-        longitude: 139.6503,
+    areaServed: [
+      {
+        "@type": "AdministrativeArea",
+        name: "神奈川県",
       },
-      geoRadius: "100000",
-    },
-    sameAs: [],
+      {
+        "@type": "AdministrativeArea",
+        name: "東京都",
+      },
+    ],
+    sameAs: [
+      "https://x.com/",
+      "https://note.com/",
+      "https://instagram.com/",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -57,7 +62,7 @@ function LocalBusinessJsonLd() {
     name: "D'Light",
     url: BASE_URL,
     description:
-      "中小企業向けWEBマーケティング支援。SNS運用代行、WEB広告運用、映像制作、WEB制作を一気通貫で対応。",
+      "中小企業向け伴走型WEBマーケティング支援。代理店に任せても成果が出ないとお悩みの経営者へ。戦略設計から実行・自走化まで一気通貫で対応。神奈川・東京エリア。",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -134,7 +139,7 @@ function WebSiteJsonLd() {
     name: "D'Light",
     url: BASE_URL,
     description:
-      "集客と採用のためのWEBマーケティング支援。運用代行で終わらない、事業をグロースさせる「勝ち筋」の設計。",
+      "中小企業の可能性を照らし、成長の道を創る。伴走型WEBマーケティング支援で、自走できる集客の仕組みづくりを支援します。",
     publisher: {
       "@type": "Organization",
       name: "D'Light",

@@ -27,7 +27,7 @@ const STATS = [
 /** 実績セクション — クライアントに起きた変化 */
 export default function Proof() {
   return (
-    <section className="py-20 lg:py-28 bg-bg-secondary relative overflow-hidden">
+    <section className="py-20 lg:py-28 section-light bg-gradient-light relative overflow-hidden">
       <Container className="relative z-10">
         <FadeInOnScroll>
           <div className="text-center mb-12 lg:mb-16">

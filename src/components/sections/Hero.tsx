@@ -21,17 +21,21 @@ export default function Hero() {
           D&apos;Light Inc.
         </motion.p>
 
-        {/* メインキャッチコピー — MVVタグライン */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+        {/* メインキャッチコピー — 縦書き習字スタイル */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+          className="flex justify-center mb-8"
         >
-          <span className="block text-gradient-gold">
-            歴史を照らし、道を創る。
-          </span>
-        </motion.h1>
+          <h1
+            className="font-brush text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.8] tracking-[0.15em]"
+            style={{ writingMode: "vertical-rl" }}
+          >
+            <span className="block">歴史を照らし、</span>
+            <span className="block">道を創る。</span>
+          </h1>
+        </motion.div>
 
         {/* サブキャッチ */}
         <motion.p

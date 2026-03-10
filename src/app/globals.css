@@ -4,30 +4,34 @@
    D'Light デザインシステム
    ============================ */
 
-@theme inline {
-  /* カラーパレット（名刺の世界観に準拠） */
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #0f0f0f;
-  --color-bg-card: #161616;
-  --color-bg-card-hover: #1e1e1e;
-  --color-text-primary: #f5f5f5;
-  --color-text-muted: #a0a0a0;
-  --color-text-dark: #666666;
+@theme {
+  /* カラーパレット（ディープネイビー基調） */
+  --color-bg-primary: #0b1120;
+  --color-bg-secondary: #0f1729;
+  --color-bg-card: #141e33;
+  --color-bg-card-hover: #1a2740;
+  --color-text-primary: #f0f2f5;
+  --color-text-muted: #94a3b8;
+  --color-text-dark: #64748b;
   --color-accent-gold: #c9a84c;
   --color-accent-amber: #dbb85c;
   --color-accent-gold-light: #e0c96e;
   --color-accent-green: #1a3a2a;
-  --color-border: #1e1e1e;
-  --color-border-light: #2a2a2a;
+  --color-border: #1e2d45;
+  --color-border-light: #2a3d5a;
+
+  /* ゴールドボタン上の固定テキスト色 */
+  --color-text-on-gold: #0b1120;
 
   /* フォント */
   --font-sans: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
+  --font-brush: var(--font-yuji-syuku), serif;
 }
 
 /* ベーススタイル */
 body {
-  background-color: #0a0a0a;
-  color: #f5f5f5;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,22 +43,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #0b1120;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #2a3d5a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: #3a5070;
 }
 
 /* セレクション */
 ::selection {
   background-color: rgba(212, 168, 67, 0.3);
-  color: #f5f5f5;
+  color: #f0f2f5;
 }
 
 /* グロー効果のキーフレーム */
@@ -122,15 +126,48 @@ body {
 }
 
 .bg-gradient-dark {
-  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+  background: linear-gradient(180deg, #0b1120 0%, #101b30 100%);
 }
 
 .bg-gradient-dark-reverse {
-  background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+  background: linear-gradient(180deg, #101b30 0%, #0b1120 100%);
+}
+
+.bg-gradient-light {
+  background: linear-gradient(180deg, #faf8f3 0%, #f3efe6 100%);
+}
+
+.bg-gradient-light-reverse {
+  background: linear-gradient(180deg, #f3efe6 0%, #faf8f3 100%);
 }
 
 .border-gradient-gold {
   border-image: linear-gradient(135deg, #d4a843, transparent) 1;
+}
+
+/* ライトセクション用CSS変数オーバーライド */
+.section-light {
+  --color-bg-primary: #faf8f3;
+  --color-bg-secondary: #f3efe6;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f8f6f1;
+  --color-text-primary: #1a1a2e;
+  --color-text-muted: #4a5568;
+  --color-text-dark: #718096;
+  --color-accent-gold: #b8941f;
+  --color-accent-amber: #c9a530;
+  --color-accent-gold-light: #d4b340;
+  --color-border: #e2ddd0;
+  --color-border-light: #d6d0c2;
+  --color-text-on-gold: #1a1a2e;
+}
+
+.section-light .glow-gold {
+  box-shadow: 0 0 20px rgba(184, 148, 31, 0.15), 0 0 40px rgba(184, 148, 31, 0.05);
+}
+
+.section-light .glow-gold-strong {
+  box-shadow: 0 0 30px rgba(184, 148, 31, 0.25), 0 0 60px rgba(184, 148, 31, 0.08);
 }
 
 /* スムーズスクロール */

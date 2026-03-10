@@ -6,9 +6,12 @@ import BlogCard from "@/components/blog/BlogCard";
 import { getHealthManagementPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "健康経営コラム",
+  title: "健康経営コラム | 健康経営優良法人の認定取得サポート",
   description:
-    "D'Lightが発信する健康経営に関するコラム・ノウハウ記事です。健康経営優良法人の認定取得や助成金活用など、実践的な情報をお届けします。",
+    "健康経営優良法人の認定取得を目指す中小企業向けコラム。申請手順、助成金活用、従業員の健康づくり施策など、神奈川・東京エリアでの実践ノウハウをお届けします。",
+  alternates: {
+    canonical: "/blog/health-management",
+  },
 };
 
 /** 健康経営ブログ一覧ページ */

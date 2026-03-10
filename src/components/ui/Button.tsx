@@ -32,7 +32,7 @@ export default function Button({
   /* バリアントスタイル */
   const variantStyles = {
     primary:
-      "bg-accent-gold text-bg-primary hover:bg-accent-gold-light glow-gold hover:glow-gold-strong",
+      "bg-accent-gold text-text-on-gold hover:bg-accent-gold-light glow-gold hover:glow-gold-strong",
     outline:
       "border border-accent-gold text-accent-gold hover:bg-accent-gold/10",
     ghost: "text-text-muted hover:text-accent-gold",

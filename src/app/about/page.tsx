@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
@@ -6,19 +7,61 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "代表紹介",
+  title: "代表紹介 | 宇田照史 - D'Light",
   description:
-    "D'Light 代表 宇田照史のプロフィール。WEBマーケティングの専門家として、事業のグロースを支援します。",
+    "D'Light代表 宇田照史。中小企業のまだ光の当たっていない可能性を照らし、自走できる道を一緒に創る。関係を築くことから始める伴走型のWEBマーケティング支援。",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 /** スキル一覧 */
 const SKILLS = [
   { category: "SNS", items: ["YouTube", "TikTok", "Instagram"] },
   { category: "広告", items: ["Google", "META", "LINE", "TikTok"] },
-  { category: "映像制作", items: ["ショートドラマ", "ドキュメンタリー", "企業PR動画", "SNS向けショート動画"] },
+  {
+    category: "映像制作",
+    items: [
+      "ショートドラマ",
+      "ドキュメンタリー",
+      "企業PR動画",
+      "SNS向けショート動画",
+    ],
+  },
   {
     category: "戦略",
     items: ["マーケティング戦略", "SEO", "MEO", "コンテンツ設計"],
+  },
+];
+
+/** SNSリンク */
+const SNS_LINKS = [
+  {
+    name: "X",
+    href: "https://x.com/",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    name: "note",
+    href: "https://note.com/",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+        <path d="M22.8 4.32c-.48-.96-1.68-1.44-3.12-1.44-1.2 0-2.64.48-4.08 1.2-.96.48-1.92 1.2-2.88 1.92-.96-.72-1.92-1.44-2.88-1.92C8.4 3.36 6.96 2.88 5.76 2.88c-1.44 0-2.64.48-3.12 1.44C1.68 6 3.36 9.6 6.72 13.2c2.16 2.4 4.8 4.56 5.28 4.8.48-.24 3.12-2.4 5.28-4.8C20.64 9.6 22.32 6 22.8 4.32zM12 15.84c-1.44-1.2-3.36-3.12-4.8-4.8C4.56 8.16 3.36 5.52 3.84 4.56c.24-.48.96-.72 1.92-.72.96 0 2.16.48 3.36 1.08.96.48 1.68 1.08 2.4 1.68L12 7.08l.48-.48c.72-.6 1.44-1.2 2.4-1.68 1.2-.6 2.4-1.08 3.36-1.08.96 0 1.68.24 1.92.72.48.96-.72 3.6-3.36 6.48-1.44 1.68-3.36 3.6-4.8 4.8z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    ),
   },
 ];
 
@@ -33,103 +76,161 @@ export default function AboutPage() {
             <SectionTitle
               label="About"
               title="代表紹介"
-              subtitle="D'Light 代表 宇田照史のプロフィールをご紹介します。"
+              subtitle="D'Light 代表 宇田照史をご紹介します。"
             />
           </FadeInOnScroll>
         </Container>
       </section>
 
-      {/* プロフィール */}
+      {/* ご挨拶 — メインセクション */}
       <section className="py-16 lg:py-24 bg-bg-secondary">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <FadeInOnScroll>
-              <div className="bg-bg-card border border-border rounded-2xl p-8 lg:p-12">
-                <div className="flex flex-col lg:flex-row gap-8 items-start">
-                  {/* プロフィール写真プレースホルダー */}
-                  <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-bg-secondary border-2 border-accent-gold/30 flex items-center justify-center shrink-0 mx-auto lg:mx-0">
-                    <span className="text-4xl">👤</span>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+              {/* 左側：ご挨拶テキスト */}
+              <div className="flex-1 order-2 lg:order-1">
+                <FadeInOnScroll>
+                  {/* セクションラベル */}
+                  <div className="mb-8">
+                    <p className="text-accent-gold text-sm font-medium uppercase tracking-widest mb-3">
+                      Greeting
+                    </p>
+                    <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-2">
+                      ご挨拶
+                    </h2>
+                    <div className="w-16 h-0.5 bg-accent-gold" />
                   </div>
 
-                  {/* 基本情報 */}
-                  <div className="flex-1 text-center lg:text-left">
-                    <p className="text-accent-gold text-sm font-medium uppercase tracking-wider mb-2">
+                  {/* メインコピー */}
+                  <p className="text-accent-gold text-lg lg:text-xl font-medium mb-8 leading-relaxed">
+                    「一生の付き合いができる、そんな関係でありたい。」
+                  </p>
+
+                  {/* 本文 */}
+                  <div className="space-y-5 text-text-muted text-sm lg:text-base leading-[1.9]">
+                    <p>
+                      はじめまして、D&apos;Light代表の宇田照史です。
+                    </p>
+
+                    <p>
+                      <strong className="text-text-primary">
+                        本物の成長には、時間と根がいる。
+                      </strong>
+                      <br className="hidden sm:block" />
+                      事業も、人も、同じだと思っています。
+                    </p>
+
+                    <p>
+                      だからまず、関係を築くことから始めたい。
+                      <br className="hidden sm:block" />
+                      話を聞いて、理解して、信頼が生まれてから、
+                      <br className="hidden sm:block" />
+                      一緒に道筋を描いていく。
+                    </p>
+
+                    <p>
+                      D&apos;Lightの&ldquo;Light&rdquo;は、光。
+                      <br className="hidden sm:block" />
+                      <strong className="text-text-primary">
+                        どんな会社にも、まだ光の当たっていない可能性がある。
+                      </strong>
+                      <br className="hidden sm:block" />
+                      そこを照らして、自分たちの力で歩いていける道を一緒に創る。
+                      <br className="hidden sm:block" />
+                      それが、この仕事をやる理由です。
+                    </p>
+
+                    <p className="text-accent-gold font-medium text-base lg:text-lg pt-2">
+                      あなたの歴史を照らし、道を創る。
+                    </p>
+                  </div>
+
+                  {/* 署名 */}
+                  <div className="mt-10 pt-8 border-t border-border">
+                    <p className="text-text-dark text-xs uppercase tracking-widest mb-2">
                       D&apos;Light 代表
                     </p>
-                    <h2 className="text-3xl font-bold text-text-primary mb-1">
+                    <p className="text-text-primary text-2xl font-bold mb-1">
                       宇田 照史
-                    </h2>
-                    <p className="text-text-muted text-sm mb-6">
+                    </p>
+                    <p className="text-text-muted text-sm mb-5">
                       Uda Akihito
                     </p>
 
-                    <div className="grid grid-cols-3 gap-4 mb-6 max-w-md mx-auto lg:mx-0">
-                      <div>
-                        <span className="text-text-dark text-xs">拠点</span>
-                        <p className="text-text-primary text-sm font-medium">
-                          神奈川・東京
-                        </p>
-                      </div>
-                      <div>
-                        <span className="text-text-dark text-xs">出身</span>
-                        <p className="text-text-primary text-sm font-medium">
-                          山形県
-                        </p>
-                      </div>
-                      <div>
-                        <span className="text-text-dark text-xs">マーケティング歴</span>
-                        <p className="text-text-primary text-sm font-medium">
-                          4年半
-                        </p>
-                      </div>
+                    {/* SNSアイコン */}
+                    <div className="flex gap-4">
+                      {SNS_LINKS.map((sns) => (
+                        <a
+                          key={sns.name}
+                          href={sns.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={sns.name}
+                          className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-text-muted hover:text-accent-gold hover:border-accent-gold transition-colors duration-300"
+                        >
+                          {sns.icon}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </FadeInOnScroll>
+              </div>
+
+              {/* 右側：ポートレート写真 */}
+              <div className="lg:w-[400px] shrink-0 order-1 lg:order-2">
+                <FadeInOnScroll direction="right">
+                  <div className="lg:sticky lg:top-32">
+                    {/* ポートレート写真 */}
+                    <div className="aspect-[3/4] rounded-2xl bg-bg-card border border-border overflow-hidden relative">
+                      <Image
+                        src="/images/portrait.jpg"
+                        alt="D'Light 代表 宇田照史"
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 1024px) 100vw, 400px"
+                        priority
+                      />
                     </div>
 
-                    <p className="text-text-muted text-sm leading-relaxed">
-                      「運用代行で終わらない、事業をグロースさせる『勝ち筋』の設計」を専門としています。
-                      単なるSNSの投稿や広告の運用ではなく、戦略設計からコンテンツ制作、CVまでの導線構築を一気通貫で手がけ、
-                      クライアントの「集客モデルの自走」を実現することを得意としています。
-                    </p>
+                    {/* 基本情報カード */}
+                    <div className="mt-6 p-6 rounded-2xl bg-bg-card border border-border">
+                      <div className="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                          <span className="text-text-dark text-xs block mb-1">
+                            拠点
+                          </span>
+                          <p className="text-text-primary text-sm font-medium">
+                            神奈川・東京
+                          </p>
+                        </div>
+                        <div>
+                          <span className="text-text-dark text-xs block mb-1">
+                            出身
+                          </span>
+                          <p className="text-text-primary text-sm font-medium">
+                            山形県
+                          </p>
+                        </div>
+                        <div>
+                          <span className="text-text-dark text-xs block mb-1">
+                            マーケティング歴
+                          </span>
+                          <p className="text-text-primary text-sm font-medium">
+                            4年半
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </FadeInOnScroll>
               </div>
-            </FadeInOnScroll>
-          </div>
-        </Container>
-      </section>
-
-      {/* メッセージ */}
-      <section className="py-16 lg:py-24 bg-gradient-dark">
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            <FadeInOnScroll>
-              <SectionTitle label="Message" title="メッセージ" />
-            </FadeInOnScroll>
-            <FadeInOnScroll delay={0.2}>
-              <div className="space-y-6 text-text-muted leading-relaxed">
-                <p>
-                  多くの企業が「SNSを始めたけど成果が出ない」「広告を出しても費用対効果が合わない」という課題を抱えています。
-                  その原因の多くは、施策単体で完結してしまい、事業全体の成長戦略と紐づいていないことにあります。
-                </p>
-                <p>
-                  私は、マーケティングの本質は「勝ち筋」を見つけ、それを仕組み化することだと考えています。
-                  どの市場で、誰に対して、何を、どう届けるか。この設計ができてはじめて、SNSも広告も成果につながります。
-                </p>
-                <p>
-                  「まだ誰も手をつけていない空白地帯」から成果を出す泥臭いリサーチと実行力。
-                  それが私たちの強みであり、D&apos;Lightが提供する価値です。
-                </p>
-                <p className="text-accent-gold font-medium">
-                  売上と信頼に直結する「伴走型マーケティング・パートナー」として、
-                  あなたの事業の成長をご支援いたします。
-                </p>
-              </div>
-            </FadeInOnScroll>
+            </div>
           </div>
         </Container>
       </section>
 
       {/* スキルセット */}
-      <section className="py-16 lg:py-24 bg-bg-secondary">
+      <section className="py-16 lg:py-24 bg-gradient-dark">
         <Container>
           <FadeInOnScroll>
             <SectionTitle label="Skills" title="対応領域" />
@@ -160,7 +261,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-24 bg-gradient-dark">
+      <section className="py-16 lg:py-24 bg-bg-secondary">
         <Container className="text-center">
           <FadeInOnScroll>
             <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-6">

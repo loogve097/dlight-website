@@ -34,7 +34,7 @@ const NOT_FOR = [
 /** 対象セクション — こんな方と一緒に走りたい */
 export default function ForWho() {
   return (
-    <section className="py-20 lg:py-28 bg-bg-secondary">
+    <section className="py-20 lg:py-28 section-light bg-gradient-light">
       <Container>
         <FadeInOnScroll>
           <div className="text-center mb-12 lg:mb-16">

@@ -24,7 +24,7 @@ export default function Badge({
       className={cn(
         "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-all duration-200",
         active
-          ? "bg-accent-gold text-bg-primary"
+          ? "bg-accent-gold text-text-on-gold"
           : "bg-bg-card text-text-muted border border-border hover:border-accent-gold/30",
         onClick && "cursor-pointer",
         className

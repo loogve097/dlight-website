@@ -34,7 +34,7 @@ const COMPARISON = [
 /** 決定的な違いセクション — 比較表 */
 export default function Difference() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-dark">
+    <section className="py-20 lg:py-28 section-light bg-gradient-light">
       <Container>
         <FadeInOnScroll>
           <SectionTitle

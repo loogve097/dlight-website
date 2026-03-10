@@ -35,7 +35,7 @@ const VALUES = [
 /** 哲学セクション — 代表紹介 + Values */
 export default function Belief() {
   return (
-    <section id="belief" className="py-20 lg:py-28 bg-bg-secondary">
+    <section id="belief" className="py-20 lg:py-28 section-light bg-gradient-light">
       <Container>
         <FadeInOnScroll>
           <div className="text-center mb-12 lg:mb-16">
