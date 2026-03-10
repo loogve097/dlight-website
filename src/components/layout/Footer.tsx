@@ -15,11 +15,16 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-text-muted text-sm leading-relaxed">
-              運用代行で終わらない、
+              中小企業の可能性を照らし、
               <br />
-              事業をグロースさせる「勝ち筋」の設計。
+              成長の道を創る。
             </p>
-            <p className="text-text-dark text-sm">代表：宇田 照史</p>
+            <p className="text-text-dark text-sm">
+              代表：
+              <Link href="/about" className="hover:text-accent-gold transition-colors">
+                宇田照史
+              </Link>
+            </p>
             <p className="text-text-dark text-sm">拠点：神奈川・東京</p>
           </div>
 

@@ -5,6 +5,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import { PersonJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "代表紹介 | 宇田照史 - D'Light",
@@ -69,14 +70,23 @@ const SNS_LINKS = [
 export default function AboutPage() {
   return (
     <>
+      {/* 構造化データ */}
+      <PersonJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "代表紹介 - 宇田照史", href: "/about" },
+        ]}
+      />
+
       {/* ヘッダー */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 bg-gradient-dark">
         <Container>
           <FadeInOnScroll>
             <SectionTitle
               label="About"
-              title="代表紹介"
-              subtitle="D'Light 代表 宇田照史をご紹介します。"
+              title="宇田照史 — 代表紹介"
+              subtitle="D'Light代表 宇田照史（Uda Akihito）のプロフィールをご紹介します。"
             />
           </FadeInOnScroll>
         </Container>

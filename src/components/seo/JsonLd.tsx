@@ -15,8 +15,11 @@ function OrganizationJsonLd() {
     foundingDate: "2023",
     founder: {
       "@type": "Person",
-      name: "宇田 照史",
+      name: "宇田照史",
+      alternateName: "Uda Akihito",
       jobTitle: "代表",
+      url: `${BASE_URL}/about`,
+      image: `${BASE_URL}/images/portrait.jpg`,
     },
     address: {
       "@type": "PostalAddress",
@@ -181,9 +184,11 @@ export function ArticleJsonLd({
     dateModified: new Date(date).toISOString(),
     author: {
       "@type": "Person",
-      name: "宇田 照史",
+      name: "宇田照史",
+      alternateName: "Uda Akihito",
       jobTitle: "代表",
       url: `${BASE_URL}/about`,
+      image: `${BASE_URL}/images/portrait.jpg`,
     },
     publisher: {
       "@type": "Organization",
@@ -197,6 +202,51 @@ export function ArticleJsonLd({
     articleSection: category,
     keywords: tags.join(", "),
     inLanguage: "ja",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/** 代表者の構造化データ（Person） — Aboutページ用 */
+export function PersonJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "宇田照史",
+    alternateName: ["宇田 照史", "Uda Akihito", "Akihito Uda"],
+    jobTitle: "代表",
+    description:
+      "D'Light代表。中小企業向け伴走型WEBマーケティング支援。戦略設計から実行まで一貫して担当し、自走できる集客の仕組みを一緒に創る。",
+    url: `${BASE_URL}/about`,
+    image: `${BASE_URL}/images/portrait.jpg`,
+    worksFor: {
+      "@type": "Organization",
+      name: "D'Light",
+      url: BASE_URL,
+    },
+    knowsAbout: [
+      "WEBマーケティング",
+      "SNS運用",
+      "WEB広告運用",
+      "映像制作",
+      "中小企業支援",
+      "健康経営コンサルティング",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "神奈川県",
+      addressCountry: "JP",
+    },
+    sameAs: [
+      "https://x.com/teru_tlidh",
+      "https://note.com/",
+      "https://instagram.com/",
+    ],
   };
 
   return (
