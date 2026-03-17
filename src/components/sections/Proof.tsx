@@ -24,7 +24,7 @@ const STATS = [
   { value: 100, suffix: "%", label: "紹介率" },
 ];
 
-/** 実績セクション — クライアントに起きた変化 */
+/** 実績セクション — 結果で、語る。 */
 export default function Proof() {
   return (
     <section className="py-20 lg:py-28 section-light bg-gradient-light relative overflow-hidden">
@@ -35,20 +35,42 @@ export default function Proof() {
               Proof
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
-              クライアントに起きた変化。
+              結果で、語る。
             </h2>
           </div>
         </FadeInOnScroll>
 
-        {/* クライアントの物語 */}
+        {/* クライアントの物語 — Before → After */}
         <div className="max-w-3xl mx-auto space-y-6 mb-16">
           {CLIENT_STORIES.map((story, index) => (
             <FadeInOnScroll key={story.before} delay={index * 0.15}>
-              <div className="p-6 lg:p-8 rounded-2xl bg-bg-card border border-border">
-                <p className="text-text-dark text-sm mb-2">{story.before}</p>
-                <p className="text-text-primary text-lg font-bold">
-                  {story.after}
-                </p>
+              <div className="rounded-2xl bg-bg-card border border-border overflow-hidden">
+                {/* Before */}
+                <div className="px-6 lg:px-8 pt-6 lg:pt-8 pb-4">
+                  <span className="text-text-dark text-xs uppercase tracking-widest">
+                    Before
+                  </span>
+                  <p className="text-text-dark text-base mt-1">
+                    {story.before}
+                  </p>
+                </div>
+
+                {/* 矢印セパレーター */}
+                <div className="flex items-center gap-3 px-6 lg:px-8">
+                  <div className="flex-1 h-px bg-accent-gold/30" />
+                  <span className="text-accent-gold text-lg">▼</span>
+                  <div className="flex-1 h-px bg-accent-gold/30" />
+                </div>
+
+                {/* After */}
+                <div className="px-6 lg:px-8 pt-4 pb-6 lg:pb-8">
+                  <span className="text-accent-gold text-xs uppercase tracking-widest">
+                    After
+                  </span>
+                  <p className="text-text-primary text-xl lg:text-2xl font-bold mt-1">
+                    {story.after}
+                  </p>
+                </div>
               </div>
             </FadeInOnScroll>
           ))}

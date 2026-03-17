@@ -3,20 +3,6 @@ import { ServiceItem } from "@/types";
 /** サービス一覧データ */
 export const SERVICES: ServiceItem[] = [
   {
-    id: "sns",
-    title: "SNS運用代行",
-    description:
-      "YouTube・TikTok・Instagramを中心に、企画立案から撮影・編集・分析まで一気通貫で対応。ストリート系企画やショートドラマなど、独自のコンテンツ設計でファン化を実現します。",
-    icon: "📱",
-    features: [
-      "YouTube / TikTok / Instagram 運用",
-      "企画立案・コンテンツ設計",
-      "撮影・編集・投稿管理",
-      "データ分析・改善提案",
-      "フォロワー獲得戦略",
-    ],
-  },
-  {
     id: "ads",
     title: "WEB広告運用",
     description:
@@ -28,6 +14,20 @@ export const SERVICES: ServiceItem[] = [
       "ターゲティング設計",
       "クリエイティブ制作・ABテスト",
       "レポーティング・改善提案",
+    ],
+  },
+  {
+    id: "sns",
+    title: "SNS運用代行",
+    description:
+      "YouTube・TikTok・Instagramを中心に、企画立案から撮影・編集・分析まで一気通貫で対応。ストリート系企画やショートドラマなど、独自のコンテンツ設計でファン化を実現します。",
+    icon: "📱",
+    features: [
+      "YouTube / TikTok / Instagram 運用",
+      "企画立案・コンテンツ設計",
+      "撮影・編集・投稿管理",
+      "データ分析・改善提案",
+      "フォロワー獲得戦略",
     ],
   },
   {
@@ -56,20 +56,6 @@ export const SERVICES: ServiceItem[] = [
       "企業PR動画",
       "SNS向けショート動画",
       "撮影・編集・ナレーション",
-    ],
-  },
-  {
-    id: "health-management",
-    title: "健康経営支援",
-    description:
-      "健康経営優良法人の認定取得をサポート。申請準備から認定取得まで伴走し、企業のブランド力向上と助成金活用を実現します。採用力強化や離職率改善にもつながる経営戦略としての健康経営を提案します。",
-    icon: "🏥",
-    features: [
-      "健康経営優良法人 認定取得支援",
-      "助成金・補助金の活用サポート",
-      "健康経営計画の策定",
-      "従業員の健康施策の設計",
-      "認定後のブランディング支援",
     ],
   },
 ];

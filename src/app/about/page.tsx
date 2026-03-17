@@ -102,11 +102,6 @@ export default function AboutPage() {
                     <div className="w-16 h-0.5 bg-accent-gold" />
                   </div>
 
-                  {/* メインコピー */}
-                  <p className="text-accent-gold text-lg lg:text-xl font-medium mb-8 leading-relaxed">
-                    「一生の付き合いができる、そんな関係でありたい。」
-                  </p>
-
                   {/* 本文 */}
                   <div className="space-y-5 text-text-muted text-sm lg:text-base leading-[1.9]">
                     <p>
@@ -114,35 +109,34 @@ export default function AboutPage() {
                     </p>
 
                     <p>
-                      <strong className="text-text-primary">
-                        本物の成長には、時間と根がいる。
-                      </strong>
-                      <br className="hidden sm:block" />
-                      事業も、人も、同じだと思っています。
+                      現在のWEBマーケティング業界では、再生回数やフォロワー数といった「表面上の数字」ばかりが語られがちです。
+                      便利なツールが増え、AIが目覚ましい進化を遂げる一方で、業界全体が「見せかけの数字」を競い合う場所になりつつあることに、私は強い違和感を抱いています。
                     </p>
 
                     <p>
-                      だからまず、関係を築くことから始めたい。
+                      <strong className="text-text-primary">
+                        しかし、ビジネスの本質はそこにはありません。
+                      </strong>
                       <br className="hidden sm:block" />
-                      話を聞いて、理解して、信頼が生まれてから、
-                      <br className="hidden sm:block" />
-                      一緒に道筋を描いていく。
+                      最も大事なのは「いくら投資して、いくら利益が上がったのか」という極めてシビアな現実です。
+                      利益に繋がらない何万回の再生数よりも、一円の利益、そして一人のお客様との深い繋がり。
+                      そこに執着し、実利という形の結果を出すことこそが、プロフェッショナルとしての介在価値だと信じています。
                     </p>
 
                     <p>
-                      D&apos;Lightの&ldquo;Light&rdquo;は、光。
+                      誰もが「効率」や「楽」を求める時代だからこそ、私はあえて「泥臭さ」を選びます。
                       <br className="hidden sm:block" />
+                      最短ルートを検索するのではなく、あえて苦労を買ってでも、クライアント様がこれまで歩んできた物語（歴史）を照らし出し、真の課題を問い続ける。
                       <strong className="text-text-primary">
-                        どんな会社にも、まだ光の当たっていない可能性がある。
+                        本質から目を背けず、泥臭く掘り下げるプロセスの中にこそ、その企業にしか通ることのできない唯一無二の「道」が開ける
                       </strong>
-                      <br className="hidden sm:block" />
-                      そこを照らして、自分たちの力で歩いていける道を一緒に創る。
-                      <br className="hidden sm:block" />
-                      それが、この仕事をやる理由です。
+                      と確信しているからです。
                     </p>
 
-                    <p className="text-accent-gold font-medium text-base lg:text-lg pt-2">
-                      あなたの歴史を照らし、道を創る。
+                    <p>
+                      「仕事とは何か」「お金をいただくとはどういうことなのか」。
+                      <br className="hidden sm:block" />
+                      この問いを常に自問自答し、私自身が誰よりも成長し続けることで、お客様とその先にいる大切な方々の未来を、誠実な光で照らし続けて参ります。
                     </p>
                   </div>
 

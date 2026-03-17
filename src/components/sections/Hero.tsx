@@ -44,7 +44,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-text-muted text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          中小企業の可能性を照らし、成長の道を創る。
+          中小企業の可能性を照らし、企業成長の道を創る。
           <br className="hidden sm:block" />
           それがD&apos;Lightの仕事です。
         </motion.p>

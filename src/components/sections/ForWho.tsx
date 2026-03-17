@@ -25,11 +25,6 @@ const IDEAL_CLIENTS = [
   },
 ];
 
-/** 対象にならないケース（正直に伝える） */
-const NOT_FOR = [
-  "投稿の代行だけを求めている方",
-  "月数千万規模の広告予算一括運用をお考えの方",
-];
 
 /** 対象セクション — こんな方と一緒に走りたい */
 export default function ForWho() {
@@ -47,7 +42,7 @@ export default function ForWho() {
           </div>
         </FadeInOnScroll>
 
-        <div className="max-w-2xl mx-auto space-y-3 mb-12">
+        <div className="max-w-2xl mx-auto space-y-3">
           {IDEAL_CLIENTS.map((client, index) => (
             <FadeInOnScroll key={client.label} delay={index * 0.1}>
               <div className="flex items-center gap-4 p-4 rounded-2xl bg-bg-card border border-border">
@@ -58,20 +53,6 @@ export default function ForWho() {
           ))}
         </div>
 
-        <FadeInOnScroll delay={0.5}>
-          <div className="max-w-xl mx-auto">
-            <p className="text-text-dark text-xs text-center uppercase tracking-widest mb-4">
-              ※ 以下のケースには不向きです
-            </p>
-            <div className="flex flex-col gap-2">
-              {NOT_FOR.map((item) => (
-                <p key={item} className="text-text-dark text-sm text-center">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-        </FadeInOnScroll>
       </Container>
     </section>
   );

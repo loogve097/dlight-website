@@ -42,7 +42,7 @@ export default function Empathy() {
 
         <FadeInOnScroll delay={0.5}>
           <p className="text-center mt-12 text-text-primary text-lg font-medium">
-            D&apos;Lightは、この全てと逆のことをします。
+            だから、D&apos;Lightは全てを変える。
           </p>
         </FadeInOnScroll>
       </Container>

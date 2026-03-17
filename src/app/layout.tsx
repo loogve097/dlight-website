@@ -55,9 +55,6 @@ export const metadata: Metadata = {
     "WEB制作",
     "マーケティング支援 神奈川",
     "WEBマーケティング 東京 中小企業",
-    "健康経営優良法人",
-    "健康経営コンサルティング",
-    "健康経営 申請サポート",
   ],
   openGraph: {
     title: "D'Light | 歴史を照らし、道を創る。",

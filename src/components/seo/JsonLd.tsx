@@ -234,7 +234,6 @@ export function PersonJsonLd() {
       "WEB広告運用",
       "映像制作",
       "中小企業支援",
-      "健康経営コンサルティング",
     ],
     address: {
       "@type": "PostalAddress",

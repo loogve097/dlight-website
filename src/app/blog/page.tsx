@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-/** WEBマーケティング ブログ一覧ページ（健康経営カテゴリ除外） */
+/** WEBマーケティング ブログ一覧ページ */
 export default function BlogPage() {
   const posts = getMarketingPosts();
 
