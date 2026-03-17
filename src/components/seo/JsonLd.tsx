@@ -36,10 +36,7 @@ function OrganizationJsonLd() {
         name: "東京都",
       },
     ],
-    sameAs: [
-      "https://x.com/teru_tlidh",
-      "https://www.instagram.com/d.light_97",
-    ],
+    sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -240,10 +237,7 @@ export function PersonJsonLd() {
       addressRegion: "神奈川県",
       addressCountry: "JP",
     },
-    sameAs: [
-      "https://x.com/teru_tlidh",
-      "https://www.instagram.com/d.light_97",
-    ],
+    sameAs: [],
   };
 
   return (
