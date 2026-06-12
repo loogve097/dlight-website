@@ -3,6 +3,8 @@ import { Inter, Noto_Sans_JP, Yuji_Syuku } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import LightCursor from "@/components/animation/LightCursor";
+import ScrollBeam from "@/components/animation/ScrollBeam";
 import "./globals.css";
 
 /* フォント設定 */
@@ -74,15 +76,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  /*
+   * 【一時設定】サイト全体を検索結果に出さない（オーナー指示 2026-06-12）
+   * 公開再開時は index: true / follow: true に戻すこと。
+   * robots.txt はクロール許可のまま維持する（ブロックするとGoogleが
+   * noindexを読めず、既存のインデックスが消えないため）。
+   */
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      index: false,
+      follow: false,
     },
   },
   /* Google Search Console 所有権確認用 */
@@ -105,6 +110,9 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <LightCursor />
+        <ScrollBeam />
+        <div className="grain-overlay" aria-hidden="true" />
       </body>
     </html>
   );
