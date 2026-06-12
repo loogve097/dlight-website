@@ -54,6 +54,7 @@ export default function AboutPage() {
         <Container>
           <FadeInOnScroll>
             <SectionTitle
+              as="h1"
               label="About"
               title="宇田照史 — 代表紹介"
               subtitle="D'Light代表 宇田照史（Uda Akihito）のプロフィールをご紹介します。"

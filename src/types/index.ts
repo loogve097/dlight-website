@@ -1,3 +1,5 @@
+import type { IconName } from "@/components/ui/Icon";
+
 /** ナビゲーションリンクの型 */
 export type NavLink = {
   label: string;
@@ -10,7 +12,7 @@ export type ServiceItem = {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: IconName;
   features: string[];
 };
 
@@ -26,22 +28,13 @@ export type WorkItem = {
 };
 
 /** 実績カテゴリ */
-export type WorkCategory = "sns" | "ads" | "ec" | "new-market";
+export type WorkCategory = "sns" | "ads" | "new-market";
 
 /** 実績カテゴリラベル */
 export const WORK_CATEGORY_LABELS: Record<WorkCategory, string> = {
   sns: "SNS運用",
   ads: "広告運用",
-  ec: "EC事業",
   "new-market": "新規開拓",
-};
-
-/** 実績ハイライトの型 */
-export type ResultHighlight = {
-  value: string;
-  numericValue: number;
-  suffix: string;
-  label: string;
 };
 
 /** ブログ記事のフロントマターの型 */
@@ -77,9 +70,3 @@ export type FormResult = {
   message: string;
 };
 
-/** 強みカードの型 */
-export type StrengthItem = {
-  title: string;
-  description: string;
-  icon: string;
-};

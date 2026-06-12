@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 
 /** 相談内容の選択肢 */
 const SUBJECTS = [
@@ -85,7 +86,9 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="text-center py-12">
-        <div className="text-5xl mb-4">✉️</div>
+        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-gold/10 border border-accent-gold/30 flex items-center justify-center">
+          <Icon name="mail" className="w-8 h-8 text-accent-gold" />
+        </div>
         <h3 className="text-xl font-bold text-text-primary mb-3">
           送信完了
         </h3>
@@ -118,11 +121,12 @@ export default function ContactForm() {
 
       {/* 会社名 */}
       <div>
-        <label className="block text-text-muted text-sm mb-2">
+        <label htmlFor="contact-company" className="block text-text-muted text-sm mb-2">
           会社名 / 屋号
           <span className="text-text-dark text-xs ml-2">任意</span>
         </label>
         <input
+          id="contact-company"
           type="text"
           name="company"
           placeholder="株式会社〇〇"
@@ -132,11 +136,12 @@ export default function ContactForm() {
 
       {/* お名前 */}
       <div>
-        <label className="block text-text-muted text-sm mb-2">
+        <label htmlFor="contact-name" className="block text-text-muted text-sm mb-2">
           お名前
           <span className="text-red-400 text-xs ml-2">必須</span>
         </label>
         <input
+          id="contact-name"
           type="text"
           name="name"
           required
@@ -147,11 +152,12 @@ export default function ContactForm() {
 
       {/* メールアドレス */}
       <div>
-        <label className="block text-text-muted text-sm mb-2">
+        <label htmlFor="contact-email" className="block text-text-muted text-sm mb-2">
           メールアドレス
           <span className="text-red-400 text-xs ml-2">必須</span>
         </label>
         <input
+          id="contact-email"
           type="email"
           name="email"
           required
@@ -162,11 +168,12 @@ export default function ContactForm() {
 
       {/* 電話番号 */}
       <div>
-        <label className="block text-text-muted text-sm mb-2">
+        <label htmlFor="contact-phone" className="block text-text-muted text-sm mb-2">
           電話番号
           <span className="text-text-dark text-xs ml-2">任意</span>
         </label>
         <input
+          id="contact-phone"
           type="tel"
           name="phone"
           placeholder="090-0000-0000"
@@ -176,11 +183,11 @@ export default function ContactForm() {
 
       {/* 相談内容 */}
       <div>
-        <label className="block text-text-muted text-sm mb-2">
+        <label htmlFor="contact-subject" className="block text-text-muted text-sm mb-2">
           ご相談内容
           <span className="text-text-dark text-xs ml-2">任意</span>
         </label>
-        <select name="subject" className={inputClass}>
+        <select id="contact-subject" name="subject" className={inputClass}>
           <option value="">選択してください</option>
           {SUBJECTS.map((subject) => (
             <option key={subject} value={subject}>
@@ -192,11 +199,12 @@ export default function ContactForm() {
 
       {/* メッセージ */}
       <div>
-        <label className="block text-text-muted text-sm mb-2">
+        <label htmlFor="contact-message" className="block text-text-muted text-sm mb-2">
           メッセージ
           <span className="text-red-400 text-xs ml-2">必須</span>
         </label>
         <textarea
+          id="contact-message"
           name="message"
           required
           rows={5}

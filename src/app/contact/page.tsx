@@ -22,6 +22,7 @@ export default function ContactPage() {
         <Container>
           <FadeInOnScroll>
             <SectionTitle
+              as="h1"
               label="Contact"
               title="お問い合わせ"
               subtitle="マーケティングに関するお悩み・ご相談はお気軽にどうぞ。初回のご相談は無料です。"

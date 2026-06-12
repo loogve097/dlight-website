@@ -9,6 +9,8 @@ type Props = {
   subtitle?: string;
   /** 中央寄せにするか */
   center?: boolean;
+  /** 見出しタグ（ページ先頭の見出しは h1 を指定） */
+  as?: "h1" | "h2";
   className?: string;
 };
 
@@ -18,6 +20,7 @@ export default function SectionTitle({
   title,
   subtitle,
   center = true,
+  as: Tag = "h2",
   className,
 }: Props) {
   return (
@@ -27,9 +30,9 @@ export default function SectionTitle({
           {label}
         </span>
       )}
-      <h2 className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
+      <Tag className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
         {title}
-      </h2>
+      </Tag>
       {subtitle && (
         <p className="mt-4 text-text-muted text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
           {subtitle}

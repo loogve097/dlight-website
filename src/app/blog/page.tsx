@@ -25,6 +25,7 @@ export default function BlogPage() {
         <Container>
           <FadeInOnScroll>
             <SectionTitle
+              as="h1"
               label="Blog"
               title="ブログ / コラム"
               subtitle="WEBマーケティングに関するノウハウや知見を発信しています。"

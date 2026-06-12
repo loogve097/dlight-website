@@ -42,6 +42,7 @@ export default function WorksPage() {
         <Container>
           <FadeInOnScroll>
             <SectionTitle
+              as="h1"
               label="Works"
               title="実績紹介"
               subtitle="さまざまな業界で成果を上げてきた実績の一部をご紹介します。"

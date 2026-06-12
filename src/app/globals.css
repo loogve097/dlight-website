@@ -174,3 +174,68 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ============================
+   光のショーケース演出
+   ============================ */
+
+/* グレインテクスチャ — フラットな「AI感」を消す質感 */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* 巨大ゴーストタイポグラフィ（縁取りのみの背景文字） */
+.ghost-text {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201, 168, 76, 0.16);
+}
+
+.section-light .ghost-text {
+  -webkit-text-stroke: 1px rgba(184, 148, 31, 0.14);
+}
+
+/* ボタンの光スイープ（ホバーで光が走る） */
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-150%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+
+.btn-sweep:hover::after {
+  transform: translateX(150%);
+}
+
+/* アクセシビリティ: 動きの抑制設定を尊重する */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,5 +1,8 @@
 import Container from "@/components/ui/Container";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
+import GhostText from "@/components/animation/GhostText";
+import TiltCard from "@/components/animation/TiltCard";
+import { cn } from "@/lib/utils";
 
 /** 代表の哲学メッセージ */
 const PHILOSOPHIES = [
@@ -35,51 +38,63 @@ const VALUES = [
 /** 哲学セクション — 代表紹介 + Values */
 export default function Belief() {
   return (
-    <section id="belief" className="py-20 lg:py-28 section-light bg-gradient-light">
-      <Container>
+    <section
+      id="belief"
+      className="py-24 lg:py-36 section-light bg-gradient-light relative overflow-hidden"
+    >
+      {/* 背景の巨大ゴーストタイポ */}
+      <GhostText
+        text="BELIEF"
+        className="text-[26vw] lg:text-[20vw] -top-4 -left-6"
+      />
+
+      <Container className="relative z-10">
         <FadeInOnScroll>
-          <div className="text-center mb-12 lg:mb-16">
+          <div className="mb-16 lg:mb-20">
             <span className="text-accent-gold text-sm font-medium uppercase tracking-widest mb-3 block">
               Belief
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-bold text-text-primary leading-tight">
               人として向き合い、結果で応える。
             </h2>
+            <p className="mt-4 text-text-dark text-sm uppercase tracking-widest">
+              Founder —{" "}
+              <span className="text-text-primary font-bold text-base tracking-normal normal-case">
+                代表 宇田 照史
+              </span>
+            </p>
           </div>
         </FadeInOnScroll>
 
-        {/* 代表の哲学 */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <FadeInOnScroll>
-            <div className="text-center mb-8">
-              <p className="text-text-dark text-sm uppercase tracking-widest mb-2">
-                Founder
-              </p>
-              <p className="text-text-primary text-xl font-bold">
-                代表 宇田 照史
-              </p>
-            </div>
-          </FadeInOnScroll>
-
-          <div className="space-y-4">
-            {PHILOSOPHIES.map((text, index) => (
-              <FadeInOnScroll key={text} delay={index * 0.1}>
-                <div className="flex items-start gap-4 p-5 rounded-2xl bg-bg-card border border-border">
-                  <span className="text-accent-gold text-lg shrink-0 mt-0.5">
-                    ▸
-                  </span>
-                  <p className="text-text-primary text-base leading-relaxed">
-                    {text}
-                  </p>
-                </div>
-              </FadeInOnScroll>
-            ))}
-          </div>
+        {/* 代表の哲学 — 段差を付けた巨大引用タイポグラフィ */}
+        <div className="max-w-4xl space-y-14 lg:space-y-20 mb-24 lg:mb-32">
+          {PHILOSOPHIES.map((text, index) => (
+            <FadeInOnScroll
+              key={text}
+              direction={index % 2 === 0 ? "right" : "left"}
+            >
+              <blockquote
+                className={cn(
+                  "relative pl-8 lg:pl-10",
+                  index === 1 && "lg:ml-24",
+                  index === 2 && "lg:ml-48"
+                )}
+              >
+                <span
+                  className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full bg-gradient-to-b from-accent-gold to-accent-gold/10"
+                  aria-hidden="true"
+                />
+                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-text-primary leading-relaxed">
+                  {text}
+                </p>
+              </blockquote>
+            </FadeInOnScroll>
+          ))}
         </div>
 
         {/* Values */}
         <FadeInOnScroll>
-          <p className="text-center text-accent-gold text-sm font-medium uppercase tracking-widest mb-8">
+          <p className="text-accent-gold text-sm font-medium uppercase tracking-widest mb-8">
             Values
           </p>
         </FadeInOnScroll>
@@ -87,17 +102,19 @@ export default function Belief() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {VALUES.map((value, index) => (
             <FadeInOnScroll key={value.title} delay={index * 0.1}>
-              <div className="text-center p-6 rounded-2xl bg-bg-card border border-border">
-                <p className="text-accent-gold text-2xl font-bold mb-1">
-                  {value.title}
-                </p>
-                <p className="text-text-dark text-xs uppercase tracking-widest mb-3">
-                  {value.english}
-                </p>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
+              <TiltCard className="h-full">
+                <div className="h-full text-center p-6 rounded-2xl bg-bg-card border border-border transition-shadow duration-300 hover:glow-gold">
+                  <p className="text-accent-gold text-2xl font-bold mb-1">
+                    {value.title}
+                  </p>
+                  <p className="text-text-dark text-xs uppercase tracking-widest mb-3">
+                    {value.english}
+                  </p>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              </TiltCard>
             </FadeInOnScroll>
           ))}
         </div>

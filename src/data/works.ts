@@ -1,4 +1,4 @@
-import { WorkItem, ResultHighlight, StrengthItem } from "@/types";
+import { WorkItem } from "@/types";
 
 /** 実績データ（クライアント名は非公開） */
 export const WORKS: WorkItem[] = [
@@ -52,61 +52,5 @@ export const WORKS: WorkItem[] = [
       "Google・Meta広告のクリエイティブ最適化とターゲティング精度の向上を実施",
     result: "CPA(顧客獲得単価)の大幅削減とCV数の安定的な増加を実現",
     metrics: ["CPA大幅削減", "CV数安定増加"],
-  },
-];
-
-/** 実績ハイライト（トップページ用） */
-export const RESULT_HIGHLIGHTS: ResultHighlight[] = [
-  {
-    value: "5,000",
-    numericValue: 5000,
-    suffix: "万再生+",
-    label: "累計SNS再生数",
-  },
-  {
-    value: "23",
-    numericValue: 23,
-    suffix: "倍",
-    label: "EC年間成長率",
-  },
-  {
-    value: "100",
-    numericValue: 100,
-    suffix: "件+",
-    label: "2ヶ月での反響獲得（不動産売買）",
-  },
-  {
-    value: "50",
-    numericValue: 50,
-    suffix: "万人+",
-    label: "フォロワー獲得実績",
-  },
-];
-
-/** 選ばれる理由 */
-export const STRENGTHS: StrengthItem[] = [
-  {
-    title: "少数精鋭だから、話が早く柔軟対応",
-    description:
-      "大手のような階層構造がなく、意思決定者に直接相談できる体制。方針決定からアクションまでのタイムラグを最小限にします。",
-    icon: "⚡",
-  },
-  {
-    title: "現場主義。画面越しで終わらない",
-    description:
-      "オンラインMTGだけでなく、必要に応じて事務所に足を運び、経営者の肌感覚をキャッチ。数字だけでは見えない課題を拾います。",
-    icon: "👣",
-  },
-  {
-    title: "リサーチ力で「空白地帯」を見つける",
-    description:
-      "競合がまだ手をつけていない市場や訴求軸を、徹底的なリサーチで発掘。「誰もやっていない場所」から成果を生み出すのがD'Lightの得意技です。",
-    icon: "🔍",
-  },
-  {
-    title: "即レス。待たせない。",
-    description:
-      "連絡は基本即レス、遅くとも当日中に返信。施策のスピードはレスポンスの速さで決まる。意思決定を止めません。",
-    icon: "💬",
   },
 ];

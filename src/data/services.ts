@@ -7,7 +7,7 @@ export const SERVICES: ServiceItem[] = [
     title: "WEB広告運用",
     description:
       "Google・Meta・楽天広告を中心に、CPA最適化とスケーラブルな運用モデルを構築。データドリブンなPDCAで広告費対効果を最大化します。",
-    icon: "📊",
+    icon: "chart",
     features: [
       "Google / Meta / 楽天広告",
       "CPA最適化・ROAS改善",
@@ -21,7 +21,7 @@ export const SERVICES: ServiceItem[] = [
     title: "SNS運用代行",
     description:
       "YouTube・TikTok・Instagramを中心に、企画立案から撮影・編集・分析まで一気通貫で対応。ストリート系企画やショートドラマなど、独自のコンテンツ設計でファン化を実現します。",
-    icon: "📱",
+    icon: "smartphone",
     features: [
       "YouTube / TikTok / Instagram 運用",
       "企画立案・コンテンツ設計",
@@ -35,7 +35,7 @@ export const SERVICES: ServiceItem[] = [
     title: "WEB制作・メディア運営",
     description:
       "LP・コーポレートサイトの企画・設計・制作に加え、オウンドメディアの立ち上げ・運営も対応。マーケティング視点を取り入れた導線設計で、CVにつながるサイト・メディアを構築します。",
-    icon: "💻",
+    icon: "monitor",
     features: [
       "ランディングページ制作",
       "コーポレートサイト制作",
@@ -49,7 +49,7 @@ export const SERVICES: ServiceItem[] = [
     title: "映像制作",
     description:
       "ショートドラマ・ドキュメンタリー・PR動画など、目的に合わせた映像コンテンツを制作。「ドキュメンタリー性」を活かしたストーリーテリングが強みです。",
-    icon: "🎬",
+    icon: "film",
     features: [
       "ショートドラマ制作",
       "ドキュメンタリー映像",

@@ -4,6 +4,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import FadeInOnScroll from "@/components/animation/FadeInOnScroll";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 import { SERVICES, SERVICE_FLOW } from "@/data/services";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function ServicesPage() {
         <Container>
           <FadeInOnScroll>
             <SectionTitle
+              as="h1"
               label="Services"
               title="サービス内容"
               subtitle="マーケティング課題の本質を捉え、成果に直結する施策を設計・実行します。"
@@ -41,9 +43,12 @@ export default function ServicesPage() {
                 <div className="bg-bg-card border border-border rounded-2xl p-8 lg:p-12">
                   <div className="flex flex-col lg:flex-row gap-8">
                     <div className="lg:w-2/3">
-                      <span className="text-4xl mb-4 block">
-                        {service.icon}
-                      </span>
+                      <div className="w-14 h-14 mb-4 rounded-full bg-accent-gold/10 border border-accent-gold/30 flex items-center justify-center">
+                        <Icon
+                          name={service.icon}
+                          className="w-7 h-7 text-accent-gold"
+                        />
+                      </div>
                       <h3 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">
                         {service.title}
                       </h3>
@@ -123,7 +128,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICE_FLOW.map((step, index) => (
               <FadeInOnScroll key={step.step} delay={index * 0.15}>
-                <div className="text-center">
+                <div className="relative text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent-gold/10 border border-accent-gold/30 flex items-center justify-center">
                     <span className="text-accent-gold text-xl font-bold">
                       {step.step}
@@ -136,7 +141,7 @@ export default function ServicesPage() {
                     {step.description}
                   </p>
                   {index < SERVICE_FLOW.length - 1 && (
-                    <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 text-accent-gold/30">
+                    <div className="hidden lg:block absolute -right-4 top-8 -translate-y-1/2 text-accent-gold/30">
                       →
                     </div>
                   )}

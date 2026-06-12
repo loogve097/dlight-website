@@ -23,11 +23,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ページ遷移時にメニューを閉じる */
-  useEffect(() => {
+  /* メニュー項目クリック時にメニューを閉じる */
+  const closeMenus = () => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
-  }, [pathname]);
+  };
 
   /* ドロップダウン外クリックで閉じる */
   useEffect(() => {
@@ -72,6 +72,8 @@ export default function Header() {
                         openDropdown === link.href ? null : link.href
                       )
                     }
+                    aria-label={`${link.label}メニューを開く`}
+                    aria-expanded={openDropdown === link.href}
                     className={cn(
                       "text-sm font-medium transition-colors duration-200 hover:text-accent-gold flex items-center gap-1",
                       pathname.startsWith(link.href)
@@ -111,6 +113,7 @@ export default function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
+                        onClick={closeMenus}
                         className={cn(
                           "block px-4 py-2 text-sm transition-colors duration-200 hover:text-accent-gold hover:bg-accent-gold/5",
                           pathname === child.href
@@ -127,6 +130,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={closeMenus}
                   className={cn(
                     "text-sm font-medium transition-colors duration-200 hover:text-accent-gold",
                     pathname === link.href
@@ -151,6 +155,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden flex flex-col gap-1.5 p-2"
             aria-label="メニュー"
+            aria-expanded={isMobileMenuOpen}
           >
             <span
               className={cn(
@@ -201,6 +206,7 @@ export default function Header() {
                   <Link
                     key={child.href}
                     href={child.href}
+                    onClick={closeMenus}
                     className={cn(
                       "text-base transition-colors duration-200",
                       pathname === child.href
@@ -216,6 +222,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={closeMenus}
                 className={cn(
                   "text-lg font-medium transition-colors duration-200",
                   pathname === link.href
@@ -229,6 +236,7 @@ export default function Header() {
           )}
           <Link
             href="/contact"
+            onClick={closeMenus}
             className="mt-4 px-8 py-3 text-base font-medium bg-accent-gold text-text-on-gold rounded-full hover:bg-accent-gold-light transition-colors duration-200"
           >
             無料相談

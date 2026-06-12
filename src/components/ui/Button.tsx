@@ -47,6 +47,7 @@ export default function Button({
 
   const baseStyles = cn(
     "inline-flex items-center justify-center font-medium rounded-full transition-all duration-300",
+    "btn-sweep active:scale-[0.97]",
     variantStyles[variant],
     sizeStyles[size],
     disabled && "opacity-50 cursor-not-allowed",
